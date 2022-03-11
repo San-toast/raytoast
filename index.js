@@ -3,8 +3,11 @@ const pg = require("pg");
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT;
-app.use(express.json());
+const apiKey = process.env.apiKey;
 
+// idk if we will need this token
+// const token = process.env.token;
+app.use(express.json());
 const conString = process.env.conString;
 const client = new pg.Client(conString);
 client.connect(function (err) {
@@ -20,6 +23,18 @@ client.connect(function (err) {
     client.end();
   });
 });
+
+const getMovies = async () => {
+  const movie = await fetch(
+    `http://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`,
+    {
+      method: "GET",
+    }
+  );
+  let movieJson = await movie.json();
+  console.log(movieJson);
+};
+getMovies();
 
 app.get("/hello", (req, res) => {
   res.send("Hello");
