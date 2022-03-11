@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       firstName: DataTypes.STRING,
       lastName: DataTypes.STRING,
+      email: DataTypes.STRING,
       showtimeId: DataTypes.INTEGER,
       concessions: DataTypes.ARRAY(DataTypes.STRING),
     },
