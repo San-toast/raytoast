@@ -1,8 +1,8 @@
 require("dotenv").config();
 const apiKey = process.env.apiKey;
 const fetch = require("node-fetch");
-let nowPlaying = [];
-const getNowPlaying = async (array) => {
+const getNowPlaying = async () => {
+  let array = [];
   let url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
   const movies = await fetch(url, {
     method: "GET",
@@ -16,6 +16,7 @@ const getNowPlaying = async (array) => {
       poster: `https://image.tmdb.org/t/p/w780${moviesJson.results[i].poster_path}`,
     };
   }
-  console.log(array);
+  return array;
 };
-getNowPlaying(nowPlaying);
+
+module.exports = getNowPlaying;

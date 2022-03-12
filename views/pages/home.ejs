@@ -1,3 +1,19 @@
-<%- include('../templates/nav')-%>
+<%- include('../templates/header')-%> 
 
-<h1>hi</h1>
+<body>
+ <%- include('../templates/nav')-%>
+  <p class="now-playing-header">Now Playing</p>
+  <div class="now-playing">
+  <% for(var i=0; i < nowPlaying.length; i++) { %>
+       <div class="card grow">
+           <img class="card-image" src=<%= `https://image.tmdb.org/t/p/w200/${nowPlaying[i].poster}` %> alt="">
+        </div>
+<% } %>
+
+  </div>
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,118 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--c-dark);
+  color: var(--c-light);
+  font-family: var(--f-main);
+  --c-dark: #1c1c1c;
+  --c-mid: #53565a;
+  /* --c-accent: #b2d430; */
+  --c-accent: #1089ff;
+  /* --c-accent: #f4d800; */
+  --c-light: #ecf1f2;
+  --f-accent: "Righteous", cursive;
+  --f-main: "Montserrat", sans-serif;
+  --shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.grow {
+  transition: all 0.3s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.05);
+}
+.nav {
+  height: 70px;
+  width: 100vw;
+  max-width: 100%;
+  background-color: black;
+  display: flex;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  position: fixed;
+  padding: 0px 30px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+.now-playing {
+  height: auto;
+  width: 100vw;
+  max-width: 100%;
+  margin: 0px 10px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.card {
+  height: 350px;
+  width: 260px;
+  margin: 15px 10px;
+  border-radius: 4px;
+  background-color: var(--c-mid);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+}
+
+.card-image {
+  height: 350px;
+  width: 260px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.nav-header {
+  font-size: var(--f-accent);
+  font-weight: bold;
+  font-size: 2em;
+}
+.now-playing-header {
+  font-size: 2em;
+  font-weight: 600;
+  font-family: var(--f-main);
+  text-transform: uppercase;
+  margin: 100px 0px 20px 40px;
+}
+.reserve-button {
+  border: none;
+  height: 40px;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: var(--c-accent);
+  color: var(--c-light);
+  font-size: var(--f-main);
+  text-transform: uppercase;
+  margin: 0px 60px 0px 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    bottom: 0;
+    top: auto;
+    position: fixed;
+  }
+  .now-playing-header {
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .now-playing {
+    margin: 0;
+  }
+  .card {
+    width: 100vw;
+    height: 400px;
+    margin: 0px 0px 15px 0px;
+    max-width: 100%;
+  }
+  .card-image {
+    height: 400px;
+    width: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    object-position: top;
+  }
+}
