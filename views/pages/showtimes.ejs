@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/header')-%>
+  <body>
+    <h1><%= `Showtimes for ${movie.title}` %></h1>
+    <img class="showtime-image" src=<%=
+    `https://image.tmdb.org/t/p/w200/${movie.poster}` %>>
+  </body>
+</html>

@@ -41,10 +41,20 @@ app.get("/reserve", async (req, res) => {
   let nowPlaying = await getNowPlaying();
   res.render("pages/reserve", { nowPlaying: nowPlaying });
 });
-//working on this one
-// app.get("/showtimes/:movie", async (req, res) => {
-//   let nowPlaying = await getNowPlaying();
-//   res.render("pages/showtimes", { nowPlaying: nowPlaying });
-// });
+
+app.get("/showtimes/:id", async (req, res) => {
+  let id = req.params.id;
+  let nowPlaying = await getNowPlaying();
+  let currentMovie = "";
+  for (movie of nowPlaying) {
+    if (movie.movieId === id) {
+      currentMovie = movie;
+    }
+  }
+  res.render("pages/showtimes", {
+    nowPlaying: nowPlaying,
+    movie: currentMovie,
+  });
+});
 
 app.listen(PORT, console.log(`running on port ${PORT}`));
