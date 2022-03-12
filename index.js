@@ -3,11 +3,14 @@ const pg = require("pg");
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT;
-const apiKey = process.env.apiKey;
-
-// idk if we will need this token
-// const token = process.env.token;
 app.use(express.json());
+
+//ejs stuff
+const ejs = require("ejs");
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+app.use(express.static("./public"));
+
 const tickets = require("./routes/tickets");
 const conString = process.env.conString;
 const client = new pg.Client(conString);
