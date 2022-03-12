@@ -25,17 +25,5 @@ client.connect(function (err) {
   });
 });
 
-// const getMovies = async () => {
-//   const movie = await fetch(
-//     `http://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`,
-//     {
-//       method: "GET",
-//     }
-//   );
-//   let movieJson = await movie.json();
-//   console.log(movieJson);
-// };
-// getMovies();
-
 app.use("/tickets", tickets);
 app.listen(PORT, console.log(`running on port ${PORT}`));
