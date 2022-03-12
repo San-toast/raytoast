@@ -8,6 +8,7 @@ const apiKey = process.env.apiKey;
 // idk if we will need this token
 // const token = process.env.token;
 app.use(express.json());
+const tickets = require("./routes/tickets");
 const conString = process.env.conString;
 const client = new pg.Client(conString);
 client.connect(function (err) {
@@ -24,19 +25,17 @@ client.connect(function (err) {
   });
 });
 
-const getMovies = async () => {
-  const movie = await fetch(
-    `http://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`,
-    {
-      method: "GET",
-    }
-  );
-  let movieJson = await movie.json();
-  console.log(movieJson);
-};
-getMovies();
+// const getMovies = async () => {
+//   const movie = await fetch(
+//     `http://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`,
+//     {
+//       method: "GET",
+//     }
+//   );
+//   let movieJson = await movie.json();
+//   console.log(movieJson);
+// };
+// getMovies();
 
-app.get("/hello", (req, res) => {
-  res.send("Hello");
-});
+app.use("/tickets", tickets);
 app.listen(PORT, console.log(`running on port ${PORT}`));
