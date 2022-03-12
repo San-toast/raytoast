@@ -12,8 +12,8 @@ const getNowPlaying = async (array) => {
     array[i] = {
       title: moviesJson.results[i].title,
       id: moviesJson.results[i].id,
-      backdrop: `https://image.tmdb.org/t/p/w1280/${moviesJson.results[i].backdrop_path}`,
-      poster: `https://image.tmdb.org/t/p/w780/${moviesJson.results[i].poster_path}`,
+      backdrop: `https://image.tmdb.org/t/p/w1280${moviesJson.results[i].backdrop_path}`,
+      poster: `https://image.tmdb.org/t/p/w780${moviesJson.results[i].poster_path}`,
     };
   }
   console.log(array);

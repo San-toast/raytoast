@@ -7,6 +7,7 @@ app.use(express.json());
 
 //ejs stuff
 const ejs = require("ejs");
+const path = require("path");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.static("./public"));
@@ -29,4 +30,9 @@ client.connect(function (err) {
 });
 
 app.use("/tickets", tickets);
+
+//renders home page using ejs, can move to routes eventually
+app.get("/", (req, res) => {
+  res.render("pages/home");
+});
 app.listen(PORT, console.log(`running on port ${PORT}`));
