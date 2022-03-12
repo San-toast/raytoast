@@ -1,0 +1,10 @@
+<% for(var i=0; i < nowPlaying.length; i++) { %>
+<%let title = nowPlaying[i].title.replace(/ /g, "").toLowerCase();%>
+  <div class="card grow">
+  <a href=<%=
+    `./showtimes/${title}` %>>
+    <img class="card-image" src=<%=
+    `https://image.tmdb.org/t/p/w200/${nowPlaying[i].poster}` %>></a
+  >
+</div>
+<% } %>

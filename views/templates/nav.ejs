@@ -1,4 +1,10 @@
 <div class="nav">
   <p class="nav-header">Tixxly</p>
-  <button class="reserve-button">Reserve Tickets</button>
+  <a href="./reserve" class="reserve-button">Reserve Tickets</a>
 </div>
+<script>
+  let reserveButton = document.querySelector(".reserve-button");
+  reserveButton.addEventListener("click", () => {
+    console.log("hi");
+  });
+</script>

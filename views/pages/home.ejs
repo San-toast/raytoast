@@ -1,19 +1,10 @@
-<%- include('../templates/header')-%> 
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/header')-%>
+  <body>
+    <%- include('../templates/nav')-%>
 
-<body>
- <%- include('../templates/nav')-%>
-  <p class="now-playing-header">Now Playing</p>
-  <div class="now-playing">
-  <% for(var i=0; i < nowPlaying.length; i++) { %>
-       <div class="card grow">
-           <img class="card-image" src=<%= `https://image.tmdb.org/t/p/w200/${nowPlaying[i].poster}` %> alt="">
-        </div>
-<% } %>
-
-  </div>
-</body>
-
-
-
-
+    <p class="now-playing-header">Now Playing</p>
+    <div class="now-playing"><%- include('../templates/movieRender')-%></div>
+  </body>
 </html>

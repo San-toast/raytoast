@@ -77,13 +77,17 @@ body {
 }
 .reserve-button {
   border: none;
-  height: 40px;
+  display: grid;
+  height: 28px;
   border-radius: 4px;
   padding: 10px;
   background-color: var(--c-accent);
   color: var(--c-light);
   font-size: var(--f-main);
   text-transform: uppercase;
+  text-align: center;
+  place-items: center;
+  text-decoration: none;
   margin: 0px 60px 0px 0px;
 }
 

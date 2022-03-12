@@ -31,12 +31,20 @@ client.connect(function (err) {
 
 app.use("/tickets", tickets);
 
-//renders home page using ejs/movies.js, can move to routes folder eventually
+//EJS routes, they can move to routes folder eventually
 const getNowPlaying = require("./scripts/movies");
 app.get("/", async (req, res) => {
   let nowPlaying = await getNowPlaying();
   res.render("pages/home", { nowPlaying: nowPlaying });
-  // console.log(nowPlaying);
 });
+app.get("/reserve", async (req, res) => {
+  let nowPlaying = await getNowPlaying();
+  res.render("pages/reserve", { nowPlaying: nowPlaying });
+});
+//working on this one
+// app.get("/showtimes/:movie", async (req, res) => {
+//   let nowPlaying = await getNowPlaying();
+//   res.render("pages/showtimes", { nowPlaying: nowPlaying });
+// });
 
 app.listen(PORT, console.log(`running on port ${PORT}`));
