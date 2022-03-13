@@ -12,7 +12,13 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.static("./public"));
 
+//route variables
 const tickets = require("./routes/tickets");
+const home = require("./routes/home");
+const reserve = require("./routes/reserve");
+const showtimes = require("./routes/showtimes");
+
+//ElephantSQL things
 const conString = process.env.conString;
 const client = new pg.Client(conString);
 client.connect(function (err) {
@@ -29,32 +35,10 @@ client.connect(function (err) {
   });
 });
 
+//routes
+app.use("/", home);
 app.use("/tickets", tickets);
-
-//EJS routes, they can move to routes folder eventually
-const getNowPlaying = require("./scripts/movies");
-app.get("/", async (req, res) => {
-  let nowPlaying = await getNowPlaying();
-  res.render("pages/home", { nowPlaying: nowPlaying });
-});
-app.get("/reserve", async (req, res) => {
-  let nowPlaying = await getNowPlaying();
-  res.render("pages/reserve", { nowPlaying: nowPlaying });
-});
-
-app.get("/showtimes/:id", async (req, res) => {
-  let id = req.params.id;
-  let nowPlaying = await getNowPlaying();
-  let currentMovie = "";
-  for (movie of nowPlaying) {
-    if (movie.movieId === id) {
-      currentMovie = movie;
-    }
-  }
-  res.render("pages/showtimes", {
-    nowPlaying: nowPlaying,
-    movie: currentMovie,
-  });
-});
+app.use("/", reserve);
+app.use("/", showtimes);
 
 app.listen(PORT, console.log(`running on port ${PORT}`));
