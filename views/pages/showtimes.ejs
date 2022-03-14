@@ -6,16 +6,23 @@
   <a href="../../"><p class="nav-header">Tixxly</p></a>
   <a href="../../reserve" class="reserve-button">Reserve Tickets</a>
 </div>
-
 <div class="showtime-container"><img class="showtime-image" src=<%=
     `https://image.tmdb.org/t/p/w200/${movie.backdrop}` %>>
-    <h1><%= `Showtimes for ${movie.title}` %></h1>
+    <div class="showtime-panel">
+    <p class="showtime-title"><%= `Showtimes for ${movie.title}` %></p>
     <div class="showtime-buttons">
+      <% if (showtimes.length === 0) { %>
+         <p>
+   None scheduled at this time.
+         </p>
+  <% } %>
     <% for(var i=0; i<showtimes.length; i++) {%>
    <a class="showtime" href=<%=`../${movie.movieId}/${showtimes[i].dataValues.id}/concessions` %>>
+    <%= showtimes[i].dataValues.Day%>, <%= showtimes[i].dataValues.Date%>
        <%= showtimes[i].dataValues.Time%>
    </a>
-<% } %></div>
+  
+<% } %></div></div>
    </div> 
   </body>
  

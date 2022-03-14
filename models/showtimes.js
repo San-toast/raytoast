@@ -20,6 +20,8 @@ module.exports = (sequelize, DataTypes) => {
       MovieName: DataTypes.STRING,
       Attendees: DataTypes.INTEGER,
       movieid: DataTypes.STRING,
+      Day: DataTypes.STRING,
+      Date: DataTypes.STRING,
     },
     {
       sequelize,

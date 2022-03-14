@@ -3,8 +3,13 @@
   <%- include('../templates/header')-%>
   <body>
     <%- include('../templates/nav')-%>
+    <div class="now-playing-container">
+      <div class="now-playing-text">
+        <p class="now-playing-title">Now Playing</p>
 
-    <p class="now-playing-header">Now Playing</p>
-    <div class="now-playing"><%- include('../templates/movieRender')-%></div>
+        <p class="choose-title">Choose a movie for showtimes</p>
+      </div>
+      <div class="now-playing"><%- include('../templates/movieRender')-%></div>
+    </div>
   </body>
 </html>
