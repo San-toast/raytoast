@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 const getNowPlaying = require("../scripts/movies");
+// router.use(express.json());
 
 router.get("/showtimes/:id", async (req, res) => {
   let id = req.params.id;
@@ -12,9 +13,16 @@ router.get("/showtimes/:id", async (req, res) => {
       currentMovie = movie;
     }
   }
+  let showtimes = await db.Showtimes.findAll({
+    where: {
+      movieid: id,
+    },
+  });
+
   res.render("pages/showtimes", {
     nowPlaying: nowPlaying,
     movie: currentMovie,
+    showtimes: showtimes,
   });
 });
 

@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href="../style.css" />
-  <%- include('../templates/header')-%>
+  <!-- <link rel="stylesheet" href="../style.css" /> -->
+
+  <%= console.log("showtimes 1", showtimes[1].dataValues.Time)%>
   <body>
     <h1><%= `Showtimes for ${movie.title}` %></h1>
+    <% for(var i=0; i<showtimes.length; i++) {%>
+   <p>
+       <%= showtimes[i].dataValues.Time%>
+   </p>
+<% } %>
     <img class="showtime-image" src=<%=
     `https://image.tmdb.org/t/p/w200/${movie.poster}` %>>
   </body>
