@@ -17,6 +17,7 @@ const tickets = require("./routes/tickets");
 const home = require("./routes/home");
 const reserve = require("./routes/reserve");
 const showtimes = require("./routes/showtimes");
+const concessions = require("./routes/concessions");
 
 //ElephantSQL things
 const conString = process.env.conString;
@@ -40,5 +41,6 @@ app.use("/", home);
 app.use("/tickets", tickets);
 app.use("/", reserve);
 app.use("/", showtimes);
+app.use("/", concessions);
 
 app.listen(PORT, console.log(`running on port ${PORT}`));
