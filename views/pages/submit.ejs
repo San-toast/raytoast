@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/header')-%>
+  <body>
+    <div class="nav">
+      <a href="../../"><p class="nav-header">Tixxly</p></a>
+      <a href="../../reserve" class="reserve-button">Reserve Tickets</a>
+    </div>
+    <script>
+      let reserveButton = document.querySelector(".reserve-button");
+      reserveButton.addEventListener("click", () => {
+        console.log("hi");
+      });
+    </script>
+    <h1>You submitted!!! QR code will go here</h1>
+  </body>
+</html>

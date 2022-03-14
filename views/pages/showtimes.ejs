@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <%= console.log("showtimes 1", showtimes[1].dataValues.Time)%>
+  <%- include('../templates/header')-%>
   <body>
+    <div class="nav">
+  <a href="../../"><p class="nav-header">Tixxly</p></a>
+  <a href="../../reserve" class="reserve-button">Reserve Tickets</a>
+</div>
+
+<div class="showtime-container"><img class="showtime-image" src=<%=
+    `https://image.tmdb.org/t/p/w200/${movie.backdrop}` %>>
     <h1><%= `Showtimes for ${movie.title}` %></h1>
+    <div class="showtime-buttons">
     <% for(var i=0; i<showtimes.length; i++) {%>
-   <a href=<%=`../${movie.movieId}/${showtimes[i].dataValues.id}/concessions` %>>
+   <a class="showtime" href=<%=`../${movie.movieId}/${showtimes[i].dataValues.id}/concessions` %>>
        <%= showtimes[i].dataValues.Time%>
    </a>
-<% } %>
-    <img class="showtime-image" src=<%=
-    `https://image.tmdb.org/t/p/w200/${movie.poster}` %>>
+<% } %></div>
+   </div> 
   </body>
+ 
 </html>
+
