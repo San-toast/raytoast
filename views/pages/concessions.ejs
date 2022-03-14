@@ -4,5 +4,19 @@
   <body>
     <%- include('../templates/nav')-%>
     <h1>Pick concessions here</h1>
+    <form action="/action_page.php">
+  <label for="concessions">Pick concessions here:</label>
+  <select name="concessions" id="concessions">
+        <% for(var i=0; i<concessions.length; i++) {%>
+        
+       <%= concessions[i].dataValues.Name%>
+
+       <option class =`${i}` value=`${concessions[i].dataValues.Name}`><%=concessions[i].dataValues.Name + " " + concessions[i].dataValues.Size%></option>  
+
+<% } %>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
   </body>
 </html>
