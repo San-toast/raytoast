@@ -9,7 +9,6 @@ router.get("/:movieid/:showtimeid/concessions", async (req, res) => {
   res.render("pages/concessions", {
     concessions: concessions,
   });
-  console.log(concessions[0].dataValues);
 });
 
 module.exports = router;

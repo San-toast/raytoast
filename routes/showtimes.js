@@ -13,15 +13,6 @@ router.get("/showtimes/:id", async (req, res) => {
       currentMovie = movie;
     }
   }
-  let showtimesFormatted = {
-    Monday: [],
-    Tuesday: [],
-    Wednesday: [],
-    Thursday: [],
-    Friday: [],
-    Saturday: [],
-    Sunday: [],
-  };
   let showtimes = await db.Showtimes.findAll({
     where: {
       movieid: id,

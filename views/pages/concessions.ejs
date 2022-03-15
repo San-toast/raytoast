@@ -19,21 +19,52 @@
       </a>
   </div>
 </div>
-
-    <h1>Pick concessions here</h1>
-    <form action="/action_page.php">
-  <label for="concessions">Pick concessions here:</label>
-  <select name="concessions" id="concessions">
+    <div class="concessions-container">
+    <h1>Concessions</h1>
         <% for(var i=0; i<concessions.length; i++) {%>
-        
-       <%= concessions[i].dataValues.Name%>
-
-       <option class =`${i}` value=`${concessions[i].dataValues.Name}`><%=concessions[i].dataValues.Name + " " + concessions[i].dataValues.Size%></option>  
-
+        <button class="concession-button">
+       <%= concessions[i].dataValues.Name + " " + concessions[i].dataValues.Size%>
+        </button>
 <% } %>
-  </select>
-  <br><br>
-  <input type="submit" value="Submit">
-</form>
+</div>
+<div class="order-container">
+  <h1>Order</h1>
+
+</div>
+<a href="#" class="finish-button">This will be a -></a>
   </body>
+  <script> 
+  let orders = [];
+  let concessionButtons = document.querySelectorAll(".concession-button");
+  for (i=0; i<concessionButtons.length; i++) {
+    concessionButtons[i].addEventListener ("click", (e) =>{
+      let orderText = e.srcElement.innerText;
+      orders.push(orderText);
+      let orderContainer = document.querySelector(".order-container");
+      let newOrder = document.createElement("div");
+      let newOrderText = document.createElement("p");
+      let deleteButton = document.createElement("button");
+      deleteButton.className = "delete-button";
+      deleteButton.innerText = "X";
+      newOrder.className = "order-item";
+      newOrderText.innerText= orderText;
+      newOrder.append(newOrderText,deleteButton)
+      orderContainer.append(newOrder);
+
+})}
+
+let finishButton = document.querySelector(".finish-button");
+let pathName = window.location.pathname;
+pathName = pathName.replace('/concessions', '');
+pathArray = pathName.split("/");
+pathArray.shift();
+console.log(pathArray);
+finishButton.addEventListener ("click", () => {
+  localStorage.setItem("orders", orders);
+  localStorage.setItem("showtimeId", pathArray[1]);
+  window.location.assign("/contact")
+})
+
+
+  </script>
 </html>
