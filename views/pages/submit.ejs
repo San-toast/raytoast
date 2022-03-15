@@ -12,6 +12,14 @@
         console.log("hi");
       });
     </script>
+     <% for(var i=0; i<latest.length; i++) {%>
+                <p><%="Name: " + latest[i].dataValues.firstName% + " " + latest[i].dataValues.lastName%></p>
+                <p><%="Email: " + latest[i].dataValues.email%></p>
+                <p><%="Showtime ID: " + latest[i].dataValues.showtimeId%></p>
+                <p><%="Concessions: " +latest[i].dataValues.concessions%></p>
+    <% } %>
+    <%=console.log(latest)%>
     <h1>You submitted!!! QR code will go here</h1>
+
   </body>
 </html>
