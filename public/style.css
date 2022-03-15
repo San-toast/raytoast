@@ -14,11 +14,14 @@ body {
   --f-main: "Montserrat", sans-serif;
   --shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --filter-light: invert(94%) sepia(16%) saturate(38%) hue-rotate(143deg)
+    brightness(99%) contrast(95%);
 }
 a {
   text-decoration: none;
   color: var(--c-light);
 }
+
 .grow {
   transition: all 0.3s ease-in-out;
 }
@@ -41,6 +44,10 @@ a {
   align-items: center;
   box-shadow: var(--shadow);
 }
+.nav-icons {
+  display: flex;
+  margin: 0px 60px 0px 0px;
+}
 .now-playing {
   height: auto;
   width: 100vw;
@@ -54,7 +61,7 @@ a {
   width: 260px;
   margin: 15px 10px;
   border-radius: 4px;
-  background-color: var(--c-mid);
+  background-color: var(--c-dark);
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow);
@@ -94,6 +101,10 @@ a {
   text-decoration: none;
   margin: 0px 60px 0px 0px;
 }
+.ticket-icon {
+  filter: var(--filter-light);
+  height: 40px;
+}
 .showtime-image {
   width: 100%;
   max-width: 100%;
@@ -112,12 +123,14 @@ a {
   border: none;
   display: flex;
   height: 28px;
-  width: 200px;
+  width: 190px;
+
   border-radius: 4px;
   padding: 15px 10px;
   background-color: var(--c-accent);
   color: var(--c-light);
-  font-size: var(--f-main);
+  font-size: 16px;
+  font-family: var(--f-main);
   text-transform: uppercase;
   text-align: center;
   place-items: center;
@@ -125,7 +138,7 @@ a {
 }
 .showtime-buttons {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   width: 100vw;
   flex-wrap: wrap;
   margin: 0px 10px 0px 10px;
@@ -139,6 +152,8 @@ a {
   margin: 20px 30px 20px 30px;
   text-align: center;
 }
+
+/* MOBILE */
 @media only screen and (max-width: 600px) {
   .grow:hover {
     transform: none;
@@ -147,6 +162,9 @@ a {
     bottom: 0;
     top: auto;
     position: fixed;
+    display: flex;
+    width: 100vw;
+    max-width: 100%;
   }
   .now-playing-header {
     margin: 20px 10px 20px 10px;
@@ -158,13 +176,28 @@ a {
     margin: 10px 0px 0px 0px;
   }
   .card {
-    width: 50vw;
-    height: 400px;
-    margin: 0px 0px 15px 0px;
+    width: 100vw;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    margin: 0px 0px 10px 0px;
     max-width: 100%;
+    background-color: black;
+    box-shadow: var(--shadow);
+  }
+  .card-text {
+    color: var(--c-light);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    align-self: center;
+    margin: 0px 30px;
+  }
+  .now-playing {
+    margin: 15px 0px 0px 0;
   }
   .card-image {
-    height: 400px;
+    height: 300px;
     width: 100%;
     border-radius: 4px;
     object-fit: cover;
@@ -173,8 +206,35 @@ a {
   .showtime-container {
     margin: 0;
   }
-}
 
+  .now-playing-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .now-playing-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    margin: 30px 0px 10px 0px;
+  }
+  .choose-title {
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin: 10px 0px;
+  }
+  .now-playing-text {
+    text-align: center;
+    background: linear-gradient(
+      180deg,
+      rgba(16, 137, 255, 1) 0%,
+      rgba(2, 93, 185, 1) 100%
+    );
+    height: 160px;
+  }
+}
 @media only screen and (min-width: 600px) {
   .now-playing-text {
     padding: 70px 0px 0px;
@@ -188,15 +248,14 @@ a {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 3rem;
-    margin: 0px 0px 0px 0px;
+    margin: 43px 0px 10px 0px;
   }
   .choose-title {
     text-transform: uppercase;
     font-size: 1.3rem;
-    /* margin: 15px 0px 70px 0px; */
   }
-  .now-playing {
-    margin: 15px 0px 0px 0px;
+  .card-text {
+    display: none;
   }
   .showtime-image {
     height: 100vh;
