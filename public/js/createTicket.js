@@ -1,12 +1,13 @@
-console.log("AAAAAAAA");
 const submitButton = document.querySelector(".submitButton");
 
 const createTicket = async () => {
   const inputFirstName = document.querySelector(".first-name").value;
   const inputLastName = document.querySelector(".last-name").value;
   const inputEmail = document.querySelector(".email").value;
-  const inputConcessions = localStorage.orders;
-  const inputShowtimeId = localStorage.showtimeId;
+  let inputConcessions = localStorage.orders;
+  let inputShowtimeId = localStorage.showtimeId;
+  inputConcessions = inputConcessions.split(",");
+  console.log(inputConcessions);
   const ticketToCreate = {
     firstName: inputFirstName,
     lastName: inputLastName,
