@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/header')-%>
+  <body>
+    <%- include('../templates/nav')-%>
+        <div>
+    <h1>Tickets</h1>
+    <table class="databaseContainer">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Showtime ID</th>
+            <th>Concessions</th>
+        </tr>
+        <% for(var i=0; i<tickets.length; i++) {%>
+            <tr>
+                <th><%=tickets[i].dataValues.firstName%></th>
+                <th><%=tickets[i].dataValues.lastName%></th>
+                <th><%=tickets[i].dataValues.email%></th>
+                <th><%=tickets[i].dataValues.showtimeId%></th>
+                <th><%=tickets[i].dataValues.concessions%></th>
+            </tr>
+            <% } %>
+    </table>
+
+
+      
+
+
+</div>
+  </body>
+</html>
