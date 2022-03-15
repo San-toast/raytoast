@@ -5,12 +5,13 @@ const createTicket = async () => {
   const inputFirstName = document.querySelector(".first-name").value;
   const inputLastName = document.querySelector(".last-name").value;
   const inputEmail = document.querySelector(".email").value;
-
+  const inputConcessions = localStorage.orders;
+  const inputShowtimeId = localStorage.showtimeId;
   const ticketToCreate = {
     firstName: inputFirstName,
     lastName: inputLastName,
-    showtimeId: 1,
-    concessions: ["medium coke"],
+    showtimeId: inputShowtimeId,
+    concessions: inputConcessions,
     email: inputEmail,
   };
   const createNewTicket = await fetch("http://localhost:3000/create_ticket", {
