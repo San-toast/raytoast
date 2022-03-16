@@ -23,4 +23,10 @@
     text-align: left;
     color: white;
   }
+  .odd {
+    background-color: #1089ff;
+  }
+  .even {
+    background-color: #0f5daa;
+  }
 }
