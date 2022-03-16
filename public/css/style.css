@@ -44,13 +44,16 @@ a {
   font-weight: bold;
   font-size: 2em;
 }
-.nav-icons {
-  margin: 0px 60px 0px 0px;
+.nav-links {
   display: flex;
+  gap: 20px;
+  margin-right: 60px;
 }
-.ticket-icon {
-  height: 40px;
-  filter: var(--filter-light);
+.nav-link {
+  font-size: 16px;
+}
+.nav-link:hover {
+  color: var(--c-accent);
 }
 .now-playing-movies {
   height: auto;
@@ -144,6 +147,11 @@ a {
     display: flex;
     width: 100vw;
     max-width: 100%;
+    padding: 0px 30px;
+  }
+  .nav-links {
+    font-size: 12px;
+    text-align: center;
   }
   .home-container {
     display: flex;
@@ -300,7 +308,6 @@ a {
   .secondary-text {
     font-size: 20px;
   }
-  /*  */
   .now-playing-container {
     box-shadow: var(--shadow);
   }
@@ -314,7 +321,7 @@ a {
   }
   .now-playing-text {
     padding: 0px 0px 0px 0px;
-    height: 180px;
+    height: 160px;
   }
   .now-playing-title {
     font-weight: 700;
