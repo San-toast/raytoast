@@ -1,0 +1,26 @@
+@media only screen and (min-width: 600px) {
+  .databaseContainer {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .databaseContainer td,
+  .databaseContainer th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  .topRow {
+    background-color: #1089ff;
+  }
+
+  .databaseContainer tr:nth-child(even) {
+    background-color: black;
+  }
+
+  .databaseContainer th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: white;
+  }
+}

@@ -1,0 +1,120 @@
+/* ALL */
+
+/* MOBILE */
+
+/* TABLET */
+
+/* LAPTOP */
+@media only screen and (min-width: 600px) {
+  .concessions-container {
+    margin: 0px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+    width: 50vw;
+    max-width: 50%;
+  }
+  .concessions-header {
+    height: 180px;
+    background: linear-gradient(
+      180deg,
+      rgba(16, 137, 255, 1) 0%,
+      rgba(2, 93, 185, 1) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 70px 0px 0px 0px;
+  }
+  .concessions-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    margin: 40px 0px 10px 0px;
+  }
+  .concessions-text {
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+  .concession-button {
+    background-color: var(--c-accent);
+    border-radius: 10px;
+    width: fit-content;
+    margin: 5px 10px;
+    padding: 8px 15px;
+    border: none;
+    color: var(--c-light);
+    font-size: 16px;
+    font-family: var(--f-main);
+  }
+  .section-title {
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .order-title {
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .order-container {
+    background-color: var(--c-light);
+
+    color: black;
+    box-shadow: var(--shadow);
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    width: 80%;
+    min-height: 200px;
+    padding: 10px 0px;
+  }
+  .order-item {
+    display: flex;
+  }
+  .finish-button {
+    background-color: var(--c-accent);
+    border-radius: 10px;
+    width: fit-content;
+    margin: 0px 10px;
+    padding: 8px 15px;
+    border: none;
+    color: var(--c-light);
+    font-size: 24px;
+    font-family: var(--f-main);
+    font-weight: 700;
+    align-self: center;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .arrow {
+    fill: var(--c-light);
+    height: 30px;
+    margin: 0px 0px 0px 10px;
+  }
+  .page-container {
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+  }
+  .receipt-container {
+    width: 50vw;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
+  .delete-button {
+    margin: 0px 0px 0px 5px;
+    border: none;
+    font-size: 14px;
+    color: var(--c-accent);
+    font-family: var(--f-main);
+    font-weight: 700;
+    background: none;
+  }
+}
