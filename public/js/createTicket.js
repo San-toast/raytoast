@@ -29,7 +29,7 @@ const createTicket = async () => {
   });
   console.log(createNewTicket);
   if (createNewTicket.status === 200) {
-    window.location.assign("/thankyou");
+    // window.location.assign("/thankyou");
   } else {
     window.alert("Bruh, you messed up somewhere");
   }
