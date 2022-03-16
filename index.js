@@ -41,7 +41,7 @@ client.connect(function (err) {
 
 //routes
 app.use("/", home);
-app.use("/", tickets);
+app.use("/theatre", tickets);
 app.use("/", reserve);
 app.use("/", showtimes);
 app.use("/", concessions);

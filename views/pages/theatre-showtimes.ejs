@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/header')-%>
+  <body>
+    <%- include('../templates/nav')-%>
+        <div>
+    <h1>Showtimes</h1>
+    <table class="databaseContainer">
+        <tr class="topRow">
+            <th>Auditorium</th>
+            <th>Movie Name</th>
+            <th>Movie Id</th>
+            <th>Day</th>
+            <th>Date</th>
+        </tr>
+        <% for(var i=0; i<showtimes.length; i++) {%>
+            <tr>
+                <th><%=showtimes[i].dataValues.Auditorium%></th>
+                <th><%=showtimes[i].dataValues.MovieName%></th>
+                <th><%=showtimes[i].dataValues.MovieId%></th>
+                <th><%=showtimes[i].dataValues.Day%></th>
+                <th><%=showtimes[i].dataValues.Date%></th>
+            </tr>
+            <% } %>
+    </table>
+
+</div>
+  </body>
+</html>

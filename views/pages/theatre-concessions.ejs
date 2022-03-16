@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../templates/header')-%>
+  <body>
+    <%- include('../templates/nav')-%>
+        <div>
+    <h1>Concessions</h1>
+    <table class="databaseContainer">
+        <tr class="topRow">
+            <th>Item Name</th>
+            <th>Type</th>
+            <th>Size</th>
+        </tr>
+        <% for(var i=0; i<concessions.length; i++) {%>
+            <tr>
+                <th><%=concessions[i].dataValues.Name%></th>
+                <th><%=concessions[i].dataValues.Type%></th>
+                <th><%=concessions[i].dataValues.Size%></th>
+            </tr>
+            <% } %>
+    </table>
+
+</div>
+  </body>
+</html>
