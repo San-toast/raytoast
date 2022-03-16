@@ -12,15 +12,29 @@
         console.log("hi");
       });
     </script>
-     <% for(var i=0; i<latest.length; i++) {%>
-                <p><%="Name: " + latest[i].dataValues.firstName% + " " + latest[i].dataValues.lastName%></p>
-                <p><%="Email: " + latest[i].dataValues.email%></p>
-                <p><%="Movie: " + latest[i].dataValues.Showtime.MovieName%></p>
-                <p><%="Showtime: " + latest[i].dataValues.Showtime.Day + ", " + latest[i].dataValues.Showtime.Date + " at " + latest[i].dataValues.Showtime.Time%></p>
-                <p><%="Concessions: " +latest[i].dataValues.concessions%></p>
-    <% } %>
-    <%=console.log(latest)%>
-    <h1>You submitted!!! QR code will go here</h1>
 
+    <h1>You submitted!!! QR code will go here</h1>
+        <h1>You submitted!!! Ticket information is below</h1>
+        <table class="databaseContainer">
+        <tr>
+        <% for(var i=0; i<latest.length; i++) {%>
+          <th class="odd">Name</th>
+          <td><%=latest[i].dataValues.firstName + " " + latest[i].dataValues.lastName%></td>
+        </tr>
+        <tr>
+          <th class="even">Movie</th>
+          <td><%=latest[i].dataValues.Showtime.MovieName%></td>
+        </tr>
+        <tr>
+          <th class="odd">Showtime</th>
+          <td><%=latest[i].dataValues.Showtime.Day + ", " + latest[i].dataValues.Showtime.Date + " at " + latest[i].dataValues.Showtime.Time%></td>
+        </tr>
+        <tr>
+          <th class="even">Concessions</th>
+          <td><%=latest[i].dataValues.concessions%></td>
+         </tr>
+        <% } %>
+
+    </table>  
   </body>
 </html>
