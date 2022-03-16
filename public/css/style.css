@@ -134,12 +134,12 @@ a {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 2.5rem;
-    margin: 30px 0px 10px 0px;
+    margin: 0px 0px 10px 0px;
   }
   .choose-title {
     text-transform: uppercase;
     font-size: 1rem;
-    margin: 10px 0px;
+    margin: 10px 0px 0px 0px;
   }
   .now-playing-text {
     height: 160px;
@@ -151,8 +151,50 @@ a {
     top: 0;
     position: fixed;
   }
+  .home-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-container {
+    display: flex;
+    justify-content: center;
+    margin: 70px 0px 0px 0px;
+    align-items: center;
+    width: 100vw;
+    max-width: 100%;
+  }
+  .hero-image {
+    height: 340px;
+    width: 60vw;
+    max-width: 55%;
+    object-fit: cover;
+    filter: saturate(1.8);
+  }
+  .hero-text {
+    text-align: right;
+    margin: 10px 60px 10px 60px;
+    font-weight: 300;
+    font-size: 30px;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-text p {
+    margin: 0px 0px 8px 0px;
+  }
+  .accent-text {
+    color: var(--c-accent);
+    font-size: 52px;
+    font-weight: 600;
+  }
+  .secondary-text {
+    font-size: 20px;
+  }
+  .now-playing-container {
+    box-shadow: var(--shadow);
+  }
   .now-playing-header {
-    margin: 100px 0px 20px 40px;
+    margin: 0px 0px 20px 40px;
     font-size: 2em;
     font-weight: 600;
     font-family: var(--f-main);
@@ -160,17 +202,19 @@ a {
     text-align: center;
   }
   .now-playing-text {
-    padding: 70px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    height: 180px;
   }
   .now-playing-title {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 3rem;
-    margin: 43px 0px 10px 0px;
+    margin: 0px 0px 10px 0px;
   }
   .choose-title {
     text-transform: uppercase;
     font-size: 1.3rem;
+    margin: 10px 0px 0px 0px;
   }
   .card-image {
     height: 350px;
@@ -180,8 +224,5 @@ a {
   }
   .card-text {
     display: none;
-  }
-  .now-playing-text {
-    height: 200px;
   }
 }

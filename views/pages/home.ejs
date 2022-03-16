@@ -3,15 +3,27 @@
   <%- include('../templates/header')-%>
   <body>
     <%- include('../templates/nav')-%>
-    <div class="now-playing-container">
-      <div class="now-playing-text">
-        <p class="now-playing-title">Now Playing</p>
+    <div class="home-container">
+      <div class="hero-container">
+        <div class="hero-text">
+          <p>Your movie experience</p>
+          <p class="accent-text">simplified.</p>
+          <p class="secondary-text">
+            Browse movies, select showtimes and order concessions all before
+            arriving at the theater.
+          </p>
+        </div>
 
-        <p class="choose-title">Choose a movie for showtimes</p>
-        <i class="fa-solid fa-ticket ticket-icon"></i>
+        <img class="hero-image" src="images/projector.jpg" alt="" />
       </div>
-      <div class="now-playing-movies">
-        <%- include('../templates/movieRender')-%>
+      <div class="now-playing-container">
+        <div class="now-playing-text">
+          <p class="now-playing-title">Now Playing</p>
+          <p class="choose-title">Choose a movie for showtimes</p>
+        </div>
+        <div class="now-playing-movies">
+          <%- include('../templates/movieRender')-%>
+        </div>
       </div>
     </div>
   </body>

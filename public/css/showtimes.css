@@ -1,7 +1,6 @@
 /* ALL */
 .showtime-image {
   width: 100%;
-  max-width: 100%;
   box-shadow: var(--shadow);
 }
 .showtime-container {
@@ -59,15 +58,13 @@
 /* LAPTOP */
 @media only screen and (min-width: 600px) {
   .showtime-image {
-    height: 100vh;
-    width: 60vw;
+    height: 235px;
+    width: 100vw;
     object-fit: cover;
     max-width: 100%;
     box-shadow: var(--shadow);
-    object-position: top center;
   }
   .showtime-container {
-    flex-direction: row;
     margin: 70px 0px 0px 0px;
     max-width: 100%;
   }
