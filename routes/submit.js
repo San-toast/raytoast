@@ -11,14 +11,11 @@ router.get("/submit", async (req, res) => {
       attributes: ["MovieName", "Time", "Day", "Date"],
     },
   });
-  // let movieInfo = latest.findAll({
-  //   include: { model: await db.Showtimes },
-  // });
+
   console.log(latest);
   let showtimeid = req.params.showtimeid;
   res.render("pages/submit", {
     latest: latest,
-    // movieInfo: movieInfo,
   });
 });
 

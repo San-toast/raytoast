@@ -20,6 +20,7 @@ const showtimes = require("./routes/showtimes");
 const concessions = require("./routes/concessions");
 const contact = require("./routes/contact");
 const submit = require("./routes/submit");
+const redirect = require("./routes/redirect");
 
 //ElephantSQL things
 const conString = process.env.conString;
@@ -45,6 +46,7 @@ app.use("/", reserve);
 app.use("/", showtimes);
 app.use("/", concessions);
 app.use("/", contact);
+app.use("/", redirect);
 app.use("/", submit);
 
 app.listen(PORT, console.log(`running on port ${PORT}`));
