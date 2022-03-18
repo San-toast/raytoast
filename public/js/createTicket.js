@@ -7,7 +7,6 @@ const createTicket = async () => {
   let inputConcessions = localStorage.orders;
   let inputShowtimeId = localStorage.showtimeId;
   inputConcessions = inputConcessions.split(",");
-  console.log(inputConcessions);
   const ticketToCreate = {
     firstName: inputFirstName,
     lastName: inputLastName,
@@ -27,7 +26,6 @@ const createTicket = async () => {
     referrerPolicy: "no-referrer",
     body: JSON.stringify(ticketToCreate),
   });
-  console.log(createNewTicket);
   if (createNewTicket.status === 200) {
     // window.location.assign("/thankyou");
   } else {

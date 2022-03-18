@@ -12,7 +12,6 @@ router.get("/submit", async (req, res) => {
     },
   });
 
-  console.log(latest);
   let showtimeid = req.params.showtimeid;
   res.render("pages/submit", {
     latest: latest,

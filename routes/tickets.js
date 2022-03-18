@@ -14,7 +14,7 @@ router.get("/get/:id", async (req, res) => {
 
 router.get("/tickets", async (req, res) => {
   let tickets = await db.Tickets.findAll();
-  res.render("pages/theatre", {
+  res.render("pages/theatre-tickets", {
     tickets: tickets,
   });
 });
@@ -29,5 +29,8 @@ router.get("/concessions", async (req, res) => {
   res.render("pages/theatre-concessions", {
     concessions: concessions,
   });
+});
+router.get("/", async (req, res) => {
+  res.render("pages/theatre");
 });
 module.exports = router;

@@ -70,7 +70,6 @@ let pathName = window.location.pathname;
 pathName = pathName.replace('/concessions', '');
 pathArray = pathName.split("/");
 pathArray.shift();
-console.log(pathArray);
 finishButton.addEventListener ("click", () => {
   localStorage.setItem("orders", orders);
   localStorage.setItem("showtimeId", pathArray[1]);

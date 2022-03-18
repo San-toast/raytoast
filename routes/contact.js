@@ -8,7 +8,6 @@ router.get("/contact", async (req, res) => {
   res.render("pages/contact");
 });
 router.post("/create_ticket", async (req, res) => {
-  console.log(req.body);
   const { firstName, lastName, showtimeId, concessions, email } = req.body;
   const newTicket = {
     firstName: firstName,

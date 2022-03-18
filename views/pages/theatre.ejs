@@ -3,27 +3,21 @@
   <%- include('../templates/header')-%>
   <body>
     <%- include('../templates/nav')-%>
-        <div>
-    <h1>Tickets</h1>
-    <table class="databaseContainer">
-        <tr class="topRow">
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Showtime ID</th>
-            <th>Concessions</th>
-        </tr>
-        <% for(var i=0; i<tickets.length; i++) {%>
-            <tr>
-                <th><%=tickets[i].dataValues.firstName%></th>
-                <th><%=tickets[i].dataValues.lastName%></th>
-                <th><%=tickets[i].dataValues.email%></th>
-                <th><%=tickets[i].dataValues.showtimeId%></th>
-                <th><%=tickets[i].dataValues.concessions%></th>
-            </tr>
-            <% } %>
-    </table>
-
-</div>
+    <div class="theatre-header">
+      <p class="theatre-title">Theatre Information</p>
+    </div>
+    <div class="page-container">
+      <div class="theatre-container">
+        <a href="http://localhost:3000/theatre/showtimes"
+          ><button class="link">Showtimes</button></a
+        >
+        <a href="http://localhost:3000/theatre/concessions"
+          ><button class="link">Concessions</button></a
+        >
+        <a href="http://localhost:3000/theatre/tickets"
+          ><button class="link">Tickets</button></a
+        >
+      </div>
+    </div>
   </body>
 </html>
