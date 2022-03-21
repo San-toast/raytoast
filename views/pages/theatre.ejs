@@ -3,19 +3,23 @@
   <%- include('../templates/header')-%>
   <body>
     <%- include('../templates/nav')-%>
-    <div class="theatre-header">
-      <p class="theatre-title">Theatre Information</p>
-    </div>
-    <div class="page-container">
-      <div class="theatre-container">
+    <div class="theatre-container">
+      <img class="theatre-image" src="/images/theater.jpeg" alt="" />
+      <div class="theatre-header">
+        <p class="theatre-title">Theater Mode</p>
+        <p class="theatre-text">
+          Look at current information for your business
+        </p>
+      </div>
+      <div class="page-container">
         <a href="http://localhost:3000/theatre/showtimes"
-          ><button class="link">Showtimes</button></a
+          ><button class="link grow">Showtimes</button></a
         >
         <a href="http://localhost:3000/theatre/concessions"
-          ><button class="link">Concessions</button></a
+          ><button class="link grow">Concessions</button></a
         >
         <a href="http://localhost:3000/theatre/tickets"
-          ><button class="link">Tickets</button></a
+          ><button class="link grow">Tickets</button></a
         >
       </div>
     </div>

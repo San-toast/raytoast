@@ -55,12 +55,9 @@
       let newOrder = document.createElement("div");
       newOrder.className= "order-item";
       let newOrderText = document.createElement("p");
-      let deleteButton = document.createElement("button");
-      deleteButton.className = "delete-button";
-      deleteButton.innerText = "X";
       newOrder.className = "order-item";
       newOrderText.innerText= orderText;
-      newOrder.append(newOrderText,deleteButton)
+      newOrder.append(newOrderText);
       orderContainer.append(newOrder);
 
 })}

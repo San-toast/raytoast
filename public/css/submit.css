@@ -1,0 +1,61 @@
+.submit-title {
+  font-weight: 700;
+  font-size: 40px;
+}
+.submit-text {
+  font-size: 24px;
+  width: 90vw;
+}
+.submit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#submit-container {
+  font-size: 20px;
+}
+.databaseContainer {
+  border-collapse: collapse;
+  width: 70vw;
+}
+
+.databaseContainer td,
+.databaseContainer th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.topRow {
+  background-color: #1089ff;
+}
+
+.databaseContainer tr:nth-child(even) {
+  background-color: black;
+}
+
+.databaseContainer th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: white;
+}
+.odd {
+  background-color: #1089ff;
+}
+.even {
+  background-color: #0f5daa;
+}
+
+.submit-header {
+  margin: 70px 0px 10px 0px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .submit-header {
+    margin: 20px 0px 10px 0px;
+  }
+  .databaseContainer {
+    font-size: 16px;
+    max-width: 80%;
+  }
+}

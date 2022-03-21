@@ -27,7 +27,6 @@ const createTicket = async () => {
     body: JSON.stringify(ticketToCreate),
   });
   if (createNewTicket.status === 200) {
-    // window.location.assign("/thankyou");
   } else {
     window.alert("Bruh, you messed up somewhere");
   }

@@ -3,9 +3,11 @@
   <%- include('../templates/header')-%>
   <body>
     <%- include('../templates/nav')-%>
-    <h1>You submitted!!! QR code will go here</h1>
-        <h1>You submitted!!! Ticket information is below</h1>
-        <table class="databaseContainer">
+    <div class="submit-container">
+    <div class="submit-header">
+        <p class= "submit-title">Ticket Reserved!</p>
+        <p class="submit-text">Show these details when you arrive at the theater.</p></div>
+        <table class="databaseContainer"id ="submit-container">
         <tr>
         <% for(var i=0; i<latest.length; i++) {%>
           <th class="odd">Name</th>
@@ -25,6 +27,6 @@
          </tr>
         <% } %>
 
-    </table>  
+    </table>  </div>
   </body>
 </html>

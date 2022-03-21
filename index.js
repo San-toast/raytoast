@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT;
 app.use(express.json());
 
-//ejs stuff
+//ejs
 const ejs = require("ejs");
 const path = require("path");
 app.set("views", path.join(__dirname, "views"));
@@ -22,7 +22,7 @@ const contact = require("./routes/contact");
 const submit = require("./routes/submit");
 const redirect = require("./routes/redirect");
 
-//ElephantSQL things
+//ElephantSQL
 const conString = process.env.conString;
 const client = new pg.Client(conString);
 client.connect(function (err) {
@@ -33,7 +33,6 @@ client.connect(function (err) {
     if (err) {
       return console.error("error running query", err);
     }
-    // >> output: 2018-08-23T14:02:57.117Z
     client.end();
   });
 });
