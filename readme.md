@@ -27,3 +27,5 @@ https://www.themoviedb.org/
 # Color Palette
 
 ![Palette](/public/images/ColorPalette.png)
+
+You can readm more about the project here https://dev.to/santoast/first-fullstack-project-tixxly-576j
